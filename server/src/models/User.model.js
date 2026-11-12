@@ -12,12 +12,16 @@ const userSchema = new mongoose.Schema(
   {
     // User's email address
     email: {
-      type: String,
-      required: [true, 'Email is required'],
-      unique: true,
-      lowercase: true,
-      trim: true,
-    },
+  type: String,
+  required: [true, 'Email is required'],
+  unique: true,
+  lowercase: true,
+  trim: true,
+  match: [
+    /^[a-zA-Z0-9._%+-]+@gmail\.com$/,
+    'Please use a valid Gmail address'
+  ]
+},
 
     // User's display name
     name: {
