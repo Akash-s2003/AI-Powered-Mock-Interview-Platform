@@ -16,6 +16,11 @@ import { generateToken } from '../utils/jwt.utils.js';
  */
 export const register = async (name, email, password) => {
   // Check if email already exists
+  if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email.trim())) {
+  const error = new Error('Please use a valid Gmail address.');
+  error.statusCode = 400;
+  throw error;
+}
   const existing = await User.findOne({ email });
   if (existing) {
     const error = new Error('Email already registered.');
@@ -43,6 +48,11 @@ export const register = async (name, email, password) => {
  */
 export const emailLogin = async (email, password) => {
   // Find user by email
+  if (!/^[a-zA-Z0-9._%+-]+@gmail\.com$/.test(email.trim())) {
+  const error = new Error('Please use a valid Gmail address.');
+  error.statusCode = 400;
+  throw error;
+}
   const user = await User.findOne({ email });
   if (!user || !user.password) {
     const error = new Error('Invalid email or password.');
