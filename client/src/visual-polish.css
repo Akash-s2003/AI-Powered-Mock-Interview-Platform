@@ -1,0 +1,367 @@
+/* Visual polish for AI Mock Interview Platform
+   Purely presentational overrides: application logic is unchanged. */
+:root {
+  color-scheme: light;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: linear-gradient(135deg, #f4f7ff 0%, #f8fbff 48%, #f4f3ff 100%);
+  color: #1e293b;
+}
+.app-shell, .protected-shell { background: transparent; }
+
+/* Shared interactive elements */
+button, .btn-primary, .btn-primary-lg, .btn-outline, .home-start-btn,
+.home-empty-cta-btn, .login-submit, .cm-submit-btn, .cm-start-btn,
+.topbar-end-btn, .setup-continue-btn {
+  transition: background-color .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 3px solid rgba(99, 102, 241, .35);
+  outline-offset: 3px;
+}
+.btn-primary, .btn-primary-lg, .home-start-btn, .home-empty-cta-btn, .login-submit,
+.cm-submit-btn, .cm-start-btn {
+  background-image: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
+  box-shadow: 0 8px 18px rgba(37, 99, 235, .20);
+}
+.btn-primary:hover, .btn-primary-lg:hover, .home-start-btn:hover, .home-empty-cta-btn:hover,
+.login-submit:hover, .cm-submit-btn:hover, .cm-start-btn:hover {
+  box-shadow: 0 12px 24px rgba(37, 99, 235, .28);
+  background-image: linear-gradient(135deg, #1d4ed8 0%, #4338ca 100%);
+}
+input, textarea, select, .form-input, .login-input {
+  border-radius: 11px;
+  border-color: #d7deec;
+  background-color: #fbfcff;
+}
+input:focus, textarea:focus, select:focus, .form-input:focus, .login-input:focus {
+  border-color: #818cf8;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, .10);
+}
+.card, .home-stat-card, .interview-card, .setup-role-card, .setup-difficulty-card,
+.score-card, .login-card, .history-card, .feedback-card {
+  box-shadow: 0 12px 34px rgba(31, 41, 75, .07);
+  border-color: rgba(203, 213, 225, .8);
+}
+
+/* Dashboard */
+.home-page, .setup-page, .history-page, .feedback-page {
+  background: transparent;
+  min-height: calc(100vh - 60px);
+}
+.home-page { padding: 42px clamp(18px, 4vw, 56px); }
+.home-welcome { padding: 30px 32px; margin-bottom: 28px; border-radius: 22px;
+  background: linear-gradient(115deg, #101b3d 0%, #243b80 56%, #4f46e5 100%);
+  box-shadow: 0 18px 38px rgba(30, 58, 138, .20); }
+.home-welcome-heading { color: #fff; font-size: clamp(28px, 3vw, 38px); }
+.home-welcome-subtitle { color: #dbeafe; max-width: 680px; }
+.home-stats-row { gap: 22px; }
+.home-stat-card { border-radius: 18px; padding: 26px 20px; background: rgba(255,255,255,.92); }
+.home-stat-icon { color: #4f46e5; }
+.home-stat-number { color: #312e81; }
+.home-section-heading, .setup-section-heading { letter-spacing: -.3px; }
+.home-interviews-grid { gap: 20px; }
+.interview-card, .setup-role-card, .setup-difficulty-card { border-radius: 16px; }
+.interview-card:hover, .setup-role-card:hover, .setup-difficulty-card:hover {
+  border-color: #a5b4fc; box-shadow: 0 15px 32px rgba(49, 46, 129, .12);
+}
+.home-empty-state { border: 1px dashed #c7d2fe; border-radius: 20px; background: rgba(255,255,255,.75); padding: 42px 24px; }
+
+/* Navigation */
+.navbar-container { background: linear-gradient(100deg, #10172f 0%, #1e2a55 65%, #312e81 100%);
+  box-shadow: 0 5px 20px rgba(15, 23, 42, .16); height: 68px; padding: 0 clamp(16px, 3vw, 36px); }
+.nav-link { border: 1px solid transparent; }
+.nav-link:hover { background: rgba(255,255,255,.10); color: #fff; }
+.nav-link-active { background: #eef2ff; color: #3730a3; }
+
+/* Interview setup */
+.setup-page { padding: 38px 20px; }
+.setup-container { background: rgba(255,255,255,.66); border: 1px solid rgba(226,232,240,.8); border-radius: 24px;
+  padding: clamp(20px, 3vw, 36px); box-shadow: 0 14px 40px rgba(31,41,75,.05); }
+.setup-role-selected, .setup-difficulty-selected { background: linear-gradient(145deg, #eef2ff, #e0e7ff); border-color: #6366f1; box-shadow: 0 0 0 3px rgba(99,102,241,.09); }
+.setup-upload-zone { background: linear-gradient(145deg, #fff, #f5f7ff); border-color: #a5b4fc; border-radius: 18px; }
+
+/* Login / landing page */
+.login-page { background: linear-gradient(145deg, #f7f8ff, #eef2ff); }
+.login-nav { box-shadow: 0 4px 18px rgba(15,23,42,.04); }
+.login-hero { background: radial-gradient(circle at 80% 15%, rgba(99,102,241,.35), transparent 32%), linear-gradient(120deg, #0b122b 0%, #172554 58%, #312e81 100%); }
+.login-hero-heading { letter-spacing: -.6px; }
+.login-hero-pill { background: rgba(79,70,229,.45); border: 1px solid rgba(199,210,254,.20); }
+.login-card { box-shadow: 0 24px 60px rgba(30,41,90,.15); border-radius: 20px; }
+.login-input { min-height: 46px; }
+
+/* Interview workspace */
+.interview-layout { background: linear-gradient(135deg, #f8faff, #eef2ff); }
+.interview-topbar { box-shadow: 0 3px 12px rgba(15,23,42,.04); }
+.interviewer-panel { background: linear-gradient(160deg, #eef2ff, #f8fafc); }
+.interviewer-avatar-circle { background: linear-gradient(135deg, #2563eb, #6366f1); box-shadow: 0 8px 20px rgba(79,70,229,.22); }
+.topbar-progress-track { background: #e0e7ff; }
+.topbar-progress-fill { background: linear-gradient(90deg, #2563eb, #818cf8); }
+
+/* Feedback, history, and voice controls */
+.cm-container, .voice-recorder, .code-editor-wrapper { border-radius: 18px; }
+.cm-mic-button { background: linear-gradient(135deg, #2563eb, #6366f1); box-shadow: 0 10px 24px rgba(79,70,229,.22); }
+.cm-transcript-box { background: #f7f8ff; border-color: #dbe3f5; }
+
+@media (max-width: 768px) {
+  .home-page { padding: 24px 16px; }
+  .home-welcome { padding: 24px 20px; }
+  .home-stats-row { flex-wrap: wrap; }
+  .home-stat-card { min-width: 140px; }
+  .navbar-container { height: auto; min-height: 64px; flex-wrap: wrap; gap: 10px; padding: 12px 16px; }
+  .navbar-left { gap: 12px; flex-wrap: wrap; }
+  .nav-links { flex-wrap: wrap; }
+  .setup-container { padding: 20px 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+}
+
+
+/* FULL-PAGE BACKDROP UPGRADE: stronger, visible colour across every screen */
+html, body, #root { min-height: 100%; }
+body {
+  min-height: 100vh;
+  background-color: #edf2ff !important;
+  background-image:
+    radial-gradient(ellipse at 8% 8%, rgba(129, 140, 248, .38) 0, rgba(129, 140, 248, 0) 32%),
+    radial-gradient(ellipse at 92% 12%, rgba(45, 212, 191, .28) 0, rgba(45, 212, 191, 0) 29%),
+    radial-gradient(ellipse at 82% 78%, rgba(167, 139, 250, .32) 0, rgba(167, 139, 250, 0) 34%),
+    radial-gradient(ellipse at 12% 88%, rgba(96, 165, 250, .27) 0, rgba(96, 165, 250, 0) 32%),
+    linear-gradient(135deg, #edf3ff 0%, #f8faff 46%, #f0edff 100%) !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+}
+#root, .app-shell, .protected-shell {
+  min-height: 100vh;
+  background: transparent !important;
+}
+.home-page, .setup-page, .history-page, .feedback-page,
+.interview-layout, .login-page, .interview-loading-state,
+.feedback-loading-state, .setup-loading-state {
+  background-color: transparent !important;
+  background-image: none !important;
+}
+/* A soft tinted wash makes the backdrop visible around the content without reducing contrast. */
+.home-welcome {
+  background: linear-gradient(118deg, rgba(15, 23, 62, .98) 0%, rgba(37, 55, 126, .96) 58%, rgba(79, 70, 229, .92) 100%) !important;
+  box-shadow: 0 22px 55px rgba(44, 56, 130, .22);
+}
+.home-stat-card, .setup-role-card, .setup-difficulty-card,
+.history-card, .feedback-card, .login-card, .card {
+  background-color: rgba(255, 255, 255, .91);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.interviewer-panel {
+  background: linear-gradient(150deg, rgba(224, 231, 255, .94), rgba(240, 253, 250, .9)) !important;
+}
+@media (max-width: 768px) {
+  body { background-attachment: scroll !important; }
+}
+
+/* ==========================================================
+   NEON GLASS THEME — dark blue / violet full-page treatment
+   Visual-only overrides. Existing React/API behavior is unchanged.
+   ========================================================== */
+:root { color-scheme: dark; }
+html, body, #root { min-height: 100%; }
+body {
+  min-height: 100vh !important;
+  color: #e8eeff !important;
+  background-color: #050b1d !important;
+  background-image:
+    radial-gradient(ellipse at 4% 2%, rgba(124, 58, 237, .35), transparent 32%),
+    radial-gradient(ellipse at 94% 12%, rgba(6, 182, 212, .25), transparent 28%),
+    radial-gradient(ellipse at 82% 84%, rgba(79, 70, 229, .34), transparent 34%),
+    radial-gradient(ellipse at 8% 92%, rgba(14, 165, 233, .22), transparent 30%),
+    linear-gradient(135deg, #050b1d 0%, #091533 48%, #101044 100%) !important;
+  background-attachment: fixed !important;
+  background-repeat: no-repeat !important;
+}
+#root, .app-shell, .protected-shell,
+.home-page, .setup-page, .history-page, .feedback-page,
+.interview-layout, .login-page, .interview-loading-state,
+.feedback-loading-state, .setup-loading-state {
+  min-height: 100vh;
+  color: #e8eeff !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Consistent typography on dark surfaces */
+.home-page h1, .home-page h2, .home-page h3,
+.setup-page h1, .setup-page h2, .setup-page h3,
+.history-page h1, .history-page h2, .history-page h3,
+.feedback-page h1, .feedback-page h2, .feedback-page h3,
+.interview-layout h1, .interview-layout h2, .interview-layout h3,
+.login-page h1, .login-page h2, .login-page h3,
+.home-section-heading, .setup-section-heading, .history-heading,
+.feedback-heading, .feedback-section-heading, .voice-block-title,
+.code-block-title, .interviewer-avatar-name {
+  color: #f5f7ff !important;
+}
+.home-page p, .setup-page p, .history-page p, .feedback-page p,
+.interview-layout p, .login-page p, .home-stat-label,
+.home-welcome-subtitle, .setup-role-desc, .setup-difficulty-desc,
+.history-empty-desc, .feedback-date-text, .feedback-role-text,
+.voice-block-desc, .interviewer-avatar-role, .interviewer-message-text {
+  color: #b9c7e8 !important;
+}
+
+/* Full-page glass panels */
+.home-welcome, .setup-container, .login-card, .history-container,
+.feedback-container, .answer-panel, .interviewer-panel,
+.voice-answer-block, .text-fallback-block, .code-answer-block,
+.interview-topbar, .interview-timeline, .cm-container,
+.voice-recorder, .code-editor-wrapper, .home-empty-state,
+.history-empty-state, .feedback-callout, .score-card,
+.home-stat-card, .interview-card, .setup-role-card,
+.setup-difficulty-card, .history-card, .feedback-card, .card {
+  color: #e8eeff !important;
+  background: linear-gradient(145deg, rgba(14, 29, 63, .91), rgba(17, 22, 65, .88)) !important;
+  border: 1px solid rgba(129, 140, 248, .26) !important;
+  border-radius: 18px;
+  box-shadow: 0 16px 42px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255,255,255,.035) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.home-welcome {
+  background: linear-gradient(115deg, rgba(30, 27, 75, .98), rgba(30, 64, 175, .92) 58%, rgba(109, 40, 217, .9)) !important;
+  border-color: rgba(129, 140, 248, .48) !important;
+  box-shadow: 0 22px 55px rgba(37, 28, 130, .35), 0 0 28px rgba(59, 130, 246, .12) !important;
+}
+.home-stat-card, .interview-card, .setup-role-card, .setup-difficulty-card,
+.history-card, .feedback-card, .score-card { transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease; }
+.interview-card:hover, .setup-role-card:hover, .setup-difficulty-card:hover,
+.home-stat-card:hover, .history-card:hover, .feedback-card:hover {
+  border-color: rgba(34, 211, 238, .65) !important;
+  box-shadow: 0 18px 42px rgba(37, 99, 235, .2), 0 0 18px rgba(139, 92, 246, .12) !important;
+}
+
+/* Top navigation */
+.navbar-container, .login-nav {
+  color: #f7f8ff !important;
+  background: rgba(4, 11, 31, .88) !important;
+  border-bottom: 1px solid rgba(129, 140, 248, .24) !important;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .24) !important;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+.navbar-brand, .brand-text, .login-nav-brand, .login-nav-name, .navbar-user-section,
+.user-name { color: #f7f8ff !important; }
+.nav-link { color: #b9c7e8 !important; border-radius: 10px; }
+.nav-link:hover, .nav-link-active {
+  color: #fff !important;
+  background: linear-gradient(100deg, rgba(79, 70, 229, .65), rgba(37, 99, 235, .48)) !important;
+  border-color: rgba(129, 140, 248, .3) !important;
+  box-shadow: 0 0 18px rgba(99, 102, 241, .16);
+}
+
+/* Buttons — vivid blue/violet/cyan */
+button, .btn-primary, .btn-primary-lg, .home-start-btn, .home-empty-cta-btn,
+.login-submit, .cm-submit-btn, .cm-start-btn, .setup-next-btn, .setup-start-btn,
+.history-start-btn, .feedback-btn-primary, .submit-text-btn, .submit-code-btn {
+  color: #fff !important;
+  background: linear-gradient(110deg, #7c3aed 0%, #4f46e5 48%, #0ea5e9 100%) !important;
+  border: 1px solid rgba(165, 180, 252, .35) !important;
+  border-radius: 11px;
+  box-shadow: 0 8px 22px rgba(79, 70, 229, .24) !important;
+}
+button:hover, .btn-primary:hover, .btn-primary-lg:hover, .home-start-btn:hover,
+.home-empty-cta-btn:hover, .login-submit:hover, .cm-submit-btn:hover,
+.cm-start-btn:hover, .setup-next-btn:hover, .setup-start-btn:hover,
+.history-start-btn:hover, .feedback-btn-primary:hover, .submit-text-btn:hover,
+.submit-code-btn:hover {
+  filter: brightness(1.12);
+  box-shadow: 0 10px 28px rgba(79, 70, 229, .36), 0 0 18px rgba(34, 211, 238, .12) !important;
+}
+.btn-outline, .feedback-btn-outline, .setup-back-btn, .setup-change-resume-btn,
+.text-fallback-toggle-btn, .interviewer-hear-again-link, .home-view-all-btn,
+.history-page-btn, .logout-btn, .cm-speak-again-btn, .cm-keep-talking-btn {
+  color: #c7d2fe !important;
+  background: rgba(30, 41, 90, .58) !important;
+  border: 1px solid rgba(129, 140, 248, .42) !important;
+}
+.btn-danger, .topbar-end-btn { background: linear-gradient(110deg, #e11d48, #f97316) !important; color: #fff !important; }
+
+/* Inputs and upload zones */
+input, textarea, select, .form-input, .login-input,
+.text-answer-textarea, .code-language-select {
+  color: #f5f7ff !important;
+  background: rgba(5, 14, 37, .82) !important;
+  border: 1px solid rgba(129, 140, 248, .34) !important;
+  border-radius: 11px !important;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.18);
+}
+input::placeholder, textarea::placeholder, .text-answer-textarea::placeholder { color: #8294bd !important; }
+input:focus, textarea:focus, select:focus, .form-input:focus, .login-input:focus,
+.text-answer-textarea:focus {
+  border-color: #22d3ee !important;
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, .12), 0 0 18px rgba(99, 102, 241, .1) !important;
+}
+.form-label, .login-label, .setup-section-heading, .setup-role-title,
+.setup-difficulty-label, .setup-resume-name, .voice-block-title,
+.code-block-title, .question-callout-text, .interviewer-question-callout,
+.history-page-info, .feedback-callout-heading { color: #e8eeff !important; }
+.setup-upload-zone, .voice-block-area, .cm-transcript-box, .code-snippet-box,
+.text-fallback-block, .vr-preview, .interviewer-question-callout {
+  color: #dbeafe !important;
+  background: rgba(7, 18, 46, .78) !important;
+  border-color: rgba(129, 140, 248, .38) !important;
+}
+.setup-role-selected, .setup-difficulty-selected, .login-tab-active {
+  background: linear-gradient(140deg, rgba(91, 33, 182, .55), rgba(29, 78, 216, .42)) !important;
+  border-color: #818cf8 !important;
+  box-shadow: 0 0 0 2px rgba(129, 140, 248, .12), 0 0 22px rgba(99, 102, 241, .13) !important;
+}
+.login-tab { color: #c7d2fe !important; }
+
+/* Interview screen, status, progress and code */
+.interview-topbar { background: rgba(5, 13, 34, .94) !important; }
+.interviewer-panel { background: linear-gradient(160deg, rgba(20, 31, 77, .96), rgba(8, 35, 64, .92)) !important; }
+.interviewer-avatar-circle { background: linear-gradient(135deg, #2563eb, #7c3aed, #06b6d4) !important; box-shadow: 0 0 32px rgba(59, 130, 246, .32) !important; }
+.topbar-progress-track, .score-bar-track { background: rgba(100, 116, 139, .28) !important; }
+.topbar-progress-fill, .score-bar-fill { background: linear-gradient(90deg, #22d3ee, #6366f1, #a78bfa) !important; }
+.interview-timeline { background: rgba(8, 18, 44, .72) !important; }
+.timeline-dot-circle { border-color: #6476a8 !important; }
+.timeline-dot-current { background: #7c3aed !important; box-shadow: 0 0 12px rgba(124, 58, 237, .55) !important; }
+.code-snippet-pre, .code-snippet-box, pre, code { color: #c4f1ff; }
+
+/* Feedback and history details */
+.feedback-callout-success { background: rgba(6, 78, 59, .35) !important; border-color: rgba(52, 211, 153, .38) !important; }
+.feedback-callout-warning { background: rgba(120, 53, 15, .32) !important; border-color: rgba(251, 191, 36, .38) !important; }
+.feedback-callout-blue { background: rgba(30, 64, 175, .32) !important; border-color: rgba(96, 165, 250, .38) !important; }
+.badge, .interview-badge, .history-count-badge { color: #dbeafe !important; background: rgba(79, 70, 229, .28) !important; border: 1px solid rgba(129, 140, 248, .25) !important; }
+.badge-success { color: #a7f3d0 !important; background: rgba(6, 95, 70, .3) !important; }
+.badge-warning { color: #fde68a !important; background: rgba(146, 64, 14, .3) !important; }
+.badge-error { color: #fecdd3 !important; background: rgba(159, 18, 57, .3) !important; }
+.loading-container p, .loading-text, .empty-container p, .empty-container h3,
+.home-empty-heading, .home-empty-text, .history-empty-heading, .history-empty-desc,
+.protected-loading-text { color: #c7d2fe !important; }
+
+/* Links, focus, scrollbars */
+a { color: #67e8f9; }
+a:hover { color: #c4b5fd; }
+button:focus-visible, a:focus-visible, input:focus-visible,
+textarea:focus-visible, select:focus-visible { outline: 2px solid #22d3ee !important; outline-offset: 3px; }
+::selection { color: #fff; background: rgba(124, 58, 237, .7); }
+* { scrollbar-color: #4f46e5 #081329; }
+@media (max-width: 768px) {
+  body { background-attachment: scroll !important; }
+  .home-welcome, .setup-container, .login-card, .history-container, .feedback-container { border-radius: 15px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; } }
+
+/* Clearly distinguish the admin sign-in state while retaining the neon-glass look. */
+.login-tab-admin.login-tab-active {
+  color: #ffffff !important;
+  background: linear-gradient(140deg, rgba(109, 40, 217, .78), rgba(37, 99, 235, .62)) !important;
+  border-color: rgba(167, 139, 250, .9) !important;
+}
+.login-admin-message {
+  background: linear-gradient(120deg, rgba(76, 29, 149, .28), rgba(30, 64, 175, .24)) !important;
+  border-color: rgba(167, 139, 250, .45) !important;
+}
