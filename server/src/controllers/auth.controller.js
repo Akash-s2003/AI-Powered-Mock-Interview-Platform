@@ -19,6 +19,15 @@ export const registerUser = async (req, res, next) => {
     if (!name || !email || !password) {
       return res.status(400).json({ success: false, message: 'Name, email, and password are required.' });
     }
+    // Gmail validation
+const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/i;
+
+if (!gmailRegex.test(email.trim())) {
+  return res.status(400).json({
+    success: false,
+    message: 'Please use a valid Gmail address.'
+  });
+}
     if (password.length < 6) {
       return res.status(400).json({ success: false, message: 'Password must be at least 6 characters.' });
     }
@@ -42,7 +51,14 @@ export const loginUser = async (req, res, next) => {
     if (!email || !password) {
       return res.status(400).json({ success: false, message: 'Email and password are required.' });
     }
+    const gmailRegex = /^[a-zA-Z0-9._%+-]+@gmail\.com$/i;
 
+if (!gmailRegex.test(email.trim())) {
+  return res.status(400).json({
+    success: false,
+    message: 'Please use a valid Gmail address.'
+  });
+}
     const result = await authService.emailLogin(email, password);
     return res.json({ success: true, data: result });
   } catch (error) {
